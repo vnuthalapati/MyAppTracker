@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="app" type="com.vivek.harini.myapptracker.ApplicationData"/>
+    </data>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="364dp"
+            android:layout_height="487dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{app.ApplicationName ?? @string/no_app_name}"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="2dp" />
+
+            <TextView
+                android:id="@+id/lblLastUse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/last_use"
+                app:layout_constraintTop_toBottomOf="@+id/appName"
+                app:layout_constraintLeft_toLeftOf="@id/appName"
+                android:layout_marginTop="9dp"
+                tools:layout_editor_absoluteX="29dp"
+                tools:layout_editor_absoluteY="47dp" />
+
+            <TextView
+                android:id="@+id/lastUse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{app.LastUsageTime ?? @string/no_last_use}"
+                app:layout_constraintTop_toBottomOf="@+id/appName"
+                app:layout_constraintLeft_toRightOf="@id/lblLastUse"
+                android:layout_marginTop="9dp"
+                android:layout_marginStart="5dp"
+                tools:layout_editor_absoluteX="103dp"
+                tools:layout_editor_absoluteY="47dp" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>
